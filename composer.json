@@ -1,0 +1,19 @@
+{
+  "name": "finley/authPlugins",
+  "description": "A Auth SDK.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "finley",
+      "email": "498657135@qq.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Finley\\authPlugins\\": "./src"
+    }
+  },
+  "require": {
+    "illuminate/database": "*"
+  }
+}
