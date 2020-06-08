@@ -19,6 +19,7 @@ $config = [
 \Finley\authPlugins\model\InitOrm::getInstance($config);
 $controller = new \Finley\authPlugins\controller\Role();
 print_r($controller->getInfoById(1));
+//1
 //print_r($controller->insertRole(['role_name'=>"fangyi2",'remark'=>123456,'menu_id_list'=>[1,2,3]]));
 //print_r($controller->updateRole(['role_id'=>12,'role_name'=>"fangyi3",'remark'=>123456,'menu_id_list'=>[1,2,3]]));
 //print_r($controller->deleteRoleById(12));
