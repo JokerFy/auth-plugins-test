@@ -1,5 +1,5 @@
 # auth-plugins
-1.composer这个包之后，复制sql文件夹下的auth.sql到数据库运行，然后通过如下方法实例化Orm配置
+1.composer require finley/auth-plugin-test，复制sql文件夹下的auth.sql到数据库运行，然后通过如下方法实例化Orm配置
 ``
 $config = [
     'type'     => 'mysql',
