@@ -14,6 +14,12 @@
     }
   },
   "require": {
-    "illuminate/database": "*"
+    "ext-json" : "*",
+    "topthink/think-validate": "^2.0",
+    "topthink/think-orm": "^2.0",
+    "mockery/mockery": "^1.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.2"
   }
 }
