@@ -17,5 +17,5 @@ $config = [
 3.模型使用了think-orm，可参考https://github.com/top-think/think-orm  
 4.验证器使用了think-validate，可参考https://github.com/top-think/think-validate  
 5.自己写了个异常处理，学习一下。  
-6.通过在控制器基类中require了common和database文件来初始化，要优化成参数传递的方式。  
+6.通过在控制器基类中require了common和database文件来初始化，要优化成参数传递的方式
 
