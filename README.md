@@ -19,4 +19,5 @@ $config = [
 4.验证器使用了think-validate，可参考https://github.com/top-think/think-validate  
 5.自己写了个异常处理，学习一下。  
 6.通过在控制器基类中require了common和database文件来初始化，要优化成参数传递的方式
+7.使用menu控制器下的nav方法，可以获取指定用户的菜单路由（menuList）和访问权限（permissions），其中menuList是菜单的展示，访问权限是api访问后端的接口权限。
 
