@@ -38,6 +38,11 @@ class InvalidArgumentException extends \Exception
     }
 
     public function error(){
-        die($this->msg);
+        header('Content-Type:application/json; charset=utf-8');
+        $result = [
+            'msg' => $this->msg,
+            'error_code' => $this->errorCode,
+        ];
+        exit(json_encode($result,JSON_UNESCAPED_UNICODE));
     }
 }

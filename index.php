@@ -17,8 +17,8 @@ $config = [
     'collation' => 'utf8mb4_general_ci',
 ];
 \Finley\authPlugins\model\InitOrm::getInstance($config);
-$controller = new \Finley\authPlugins\controller\Role();
-print_r($controller->getInfoById(1));
+$controller = new \Finley\authPlugins\controller\Auth();
+print_r($controller->getUserPermission(1));
 
 //print_r($controller->insertRole(['role_name'=>"fangyi2",'remark'=>123456,'menu_id_list'=>[1,2,3]]));
 //print_r($controller->updateRole(['role_id'=>12,'role_name'=>"fangyi3",'remark'=>123456,'menu_id_list'=>[1,2,3]]));

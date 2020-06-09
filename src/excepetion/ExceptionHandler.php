@@ -33,6 +33,6 @@ class ExceptionHander
             $this->msg = 'sorry，we make a mistake. (^o^)Y';
             $this->errorCode = 999;
         }
-        print_r(123123);
+
     }
 }

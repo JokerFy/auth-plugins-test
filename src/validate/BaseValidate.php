@@ -36,20 +36,15 @@ class BaseValidate extends Validate
      */
     public function goCheck($params)
     {
-        try{
-            if (!$this->check($params)) {
-                $exception = new InvalidArgumentException(
-                    [
-                        // $this->error有一个问题，并不是一定返回数组，需要判断
-                        'msg' => is_array($this->error) ? implode(
-                            ';', $this->error) : $this->error,
-                    ]);
-                throw $exception;
-            }
-        }catch (InvalidArgumentException $e){
-            $e->error();
+        if (!$this->check($params)) {
+            $exception = new InvalidArgumentException(
+                [
+                    // $this->error有一个问题，并不是一定返回数组，需要判断
+                    'msg' => is_array($this->error) ? implode(
+                        ';', $this->error) : $this->error,
+                ]);
+            throw $exception->error();
         }
-
         return true;
     }
 
@@ -61,17 +56,14 @@ class BaseValidate extends Validate
      */
     public function sceneCheck($params,$sence){
         //必须设置contetn-type:application/json
-        try{
-            $result = $this->scene($sence)->check($params);
-            if(!$result){
-                throw new InvalidArgumentException([
-                    // $this->error有一个问题，并不是一定返回数组，需要判断
-                    'msg' => is_array($this->error) ? implode(
-                        ';', $this->error) : $this->error,
-                ]);
-            }
-        }catch (InvalidArgumentException $e){
-            $e->error();
+        $result = $this->scene($sence)->check($params);
+        if(!$result){
+            $exception =  new InvalidArgumentException([
+                // $this->error有一个问题，并不是一定返回数组，需要判断
+                'msg' => is_array($this->error) ? implode(
+                    ';', $this->error) : $this->error,
+            ]);
+            throw $exception->error();
         }
         return true;
     }
@@ -79,17 +71,15 @@ class BaseValidate extends Validate
 
     public function checkFieldByRule($data,$rule)
     {
-        try{
-            if(!$this->check($data,$rule)){
-                throw new InvalidArgumentException([
-                    // $this->error有一个问题，并不是一定返回数组，需要判断
-                    'msg' => is_array($this->error) ? implode(
-                        ';', $this->error) : $this->error,
-                ]);
-            }
-        }catch (InvalidArgumentException $e){
-            $e->error();
+        if(!$this->check($data,$rule)){
+            $exception =  new InvalidArgumentException([
+                // $this->error有一个问题，并不是一定返回数组，需要判断
+                'msg' => is_array($this->error) ? implode(
+                    ';', $this->error) : $this->error,
+            ]);
+            throw $exception->error();
         }
+
         return true;
     }
 
@@ -108,13 +98,12 @@ class BaseValidate extends Validate
         }
         $newArray = [];
         if (!$this->check($arrays)) {
-            $exception = new InvalidArgumentException(
-                [
-                    // $this->error有一个问题，并不是一定返回数组，需要判断
-                    'msg' => is_array($this->error) ? implode(
-                        ';', $this->error) : $this->error,
-                ]);
-            throw $exception;
+            $exception =  new InvalidArgumentException([
+                // $this->error有一个问题，并不是一定返回数组，需要判断
+                'msg' => is_array($this->error) ? implode(
+                    ';', $this->error) : $this->error,
+            ]);
+            throw $exception->error();
         }
         foreach ($this->rule as $key => $value) {
             $newArray[$key] = $arrays[$key];
